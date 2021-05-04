@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codigo}{
+    numberstyle=\tiny,
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=codigo}
+
+\setstretch{1.5}
+\pgfplotsset{width=10cm,compat=1.9}
+
+\pagenumbering{gobble}
+\clearpage
+\thispagestyle{empty}
+
+\title{Resumo das duas primeiras seções do artigo ``On Understanding Types, Data Abstraction, and Polymorphism"}
+\author{Lucas Santiago}
+\date{Maio de 2020}
+
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    A ideia desse artigo é resumir as duas primeiras seções do artigo \emph{On Understanding Types, Data Abstraction, and Polymorphism} de Luca Cardelli e Peter Wegner.
+
+\end{abstract}
+
+\section{Representação dos dados}
+
+\hspace{10pt} A memória por si é apenas um conjunto de valores em binário, sem distinção entre caracteres, valores numéricos, ponteiros ou programas inteiros. A interpretação dos dados é feita de forma externa, por alguma função, por exemplo.
+O nome dos tipos são criados ao conseguir unir um conjunto de valores por uma propriedade em comum. Por exemplo, inteiros são números representados sem parte decimal e números flutuantes são valores inteiros mais uma parte decimal.
+
+A ideia de ter-se criado línguas de programação de tipagem forte é proteger a variável de ser interpretada de forma errônea, o uso, por exemplo, de um inteiro com um ponteiro poderia ser desastroso ao se acessar arbitrariamente os dados de outro programa em execução. 
+\end{document}
