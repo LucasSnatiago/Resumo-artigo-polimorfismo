@@ -50,15 +50,32 @@
 \begin{document}
 \maketitle
 
+
 \begin{abstract}
     A ideia desse artigo é resumir as duas primeiras seções do artigo \emph{On Understanding Types, Data Abstraction, and Polymorphism} de Luca Cardelli e Peter Wegner.
-
+    
 \end{abstract}
 
-\section{Representação dos dados}
+
+
+\section{Representação de dados}
 
 \hspace{10pt} A memória por si é apenas um conjunto de valores em binário, sem distinção entre caracteres, valores numéricos, ponteiros ou programas inteiros. A interpretação dos dados é feita de forma externa, por alguma função, por exemplo.
+
 O nome dos tipos são criados ao conseguir unir um conjunto de valores por uma propriedade em comum. Por exemplo, inteiros são números representados sem parte decimal e números flutuantes são valores inteiros mais uma parte decimal.
 
 A ideia de ter-se criado línguas de programação de tipagem forte é proteger a variável de ser interpretada de forma errônea, o uso, por exemplo, de um inteiro com um ponteiro poderia ser desastroso ao se acessar arbitrariamente os dados de outro programa em execução. 
+Línguas estaticamente tipadas foram inventadas como uma proteção para o programador, mesmo línguas como python sem tipagem explícita (tipos só são específicos nela na hora dos \emph{castings} de tipo) trabalham fortemente com a tipagem inferida mesmo sem o conhecimento do programador para proteger a aplicação.
+
+\section{Tipos de polimorfismo}
+
+\hspace{10pt} Línguas com tipagem convencional, não suportam que uma mesma variável tenha mais de um tipo e são chamadas de monomórficas. Com a ideia de expandir o leque de possibilidades, foram criadas variáveis polimórficas. \emph{Polimorfismo paramétrico} é quando alguma função consegue trabalhar em um conjunto específico de tipos ou estrutura de dados parecidos. \emph{Polimorfismo Ad-Hoc} é mais abrangente conseguindo executar um conjunto de operações (ou pelo menos, tentando executar corretamente) em um conjunto de tipos e estruturas, mesmo que sem semelhanças entre si, reagindo de formas diferentes para cada tipo.
+
+\emph{Polimorfismo Ad-Hoc} é dividido em dois grandes grupos \emph{overloading} e \emph{coercion}. O primeiro é apenas uma simplificação para os programadores, permitindo que eles escrevam funções com mesmo nome, mas diferindo pelos argumentos ou retorno da função. Essas funções são renomeadas durante a hora da compilação. O segundo é uma conversão de tipos implícita feita para conseguir usar uma variável de um tipo em uma função que opera usando outros tipos.
+
+Outras formas de polimorfismo são identificadas como o uso de coerção de tipos para operações simples, como somar um inteiro com um número real e resultar em um número real, sem a conversão explícita de tipos de inteiro para real antes da soma. Essa forma de polimorfismo não é considerada verdadeira, pois pode gerar ambiguidade, não é possível descobrir se um número é inteiro ou flutuante depois dessa soma, se não tiver o contexto anterior. A função de somar não consegue dizer com antecedência se o resultado será inteiro ou flutuante antes da execução do programa. 
+Para ser considerado polimorfismo verdadeiro é necessário que apenas um código consiga rodar várias estruturas e tipos com apenas uma função, mesmo que em alguns casos seja possível criar várias funções para cada um dos tipos e estruturas em tempo de compilação para gerar código de máquina mais otimizado.
+
+\section{História sobre polimorfismo}
+
 \end{document}
