@@ -52,8 +52,7 @@
 
 
 \begin{abstract}
-    A ideia desse artigo é resumir as duas primeiras seções do artigo \emph{On Understanding Types, Data Abstraction, and Polymorphism} de Luca Cardelli e Peter Wegner.
-    
+    A ideia desse artigo é resumir as duas primeiras seções do artigo \emph{On Understanding Types, Data Abstraction, and Polymorphism} de Luca Cardelli e Peter Wegner. Com isso em mente, citarei tanto como funcionam os dados dentro de computadores, o porquê de tipos fortes serem positivos para os códigos. Além da história e evolução dos tipos de polimorfismo, concluindo em como funciona e quais os grandes problemas do Cálculo Lambda.     
 \end{abstract}
 
 
@@ -85,5 +84,14 @@ diferentes. Com isso vários problemas como ambiguidades e problemas de seguran�
 
 \emph{Simula} foi a primeira língua orientada a objetos. As variáveis que guardavam as instâncias das classes não eram excluídas após a execução dos seus procedimentos. Além disso, suas estruturas e interfaces eram visíveis para os usuários.
 \emph{ADA} por sua vez, tinha uma rica variedade de módulos, incluindo subprogramas, abstração de dados, e funções para suportar programação concorrente.
+
+\section{Cálculo Lambda ($\lambda$)}
+
+\hspace{10pt} Cálculos lambda foram criados para uma mesma variável ou função suportar vários tipos ou estruturas. Dessa forma, uma função pode ser usada como uma variável, permitindo que uma função seja executada em si mesma. Por exemplo: 
+\emph{função(função(y))}. Essa forma de equação consegue operar sobre diferentes tipos e estruturas. Com isso, é importante ter alguma forma de checagem em compilação ou tempo de execução, uma vez que a operação de divisão, por exemplo, não faria sentido algum em um contexto de uma árvore binária.
+
+Para resolver o problema citado anteriormente, a ideia de um cálculo lambda tipado ganhou força. Para tipar essas operações é necessário que algum compilador tenha checagem de valores para eliminar a possibilidade de uma equação impossível, tanto quanto gerar um erro para o programador.
+
+Outra forma de evitar erros no código é - como a língua \emph{Fun} criada pelos autores do artigo - permitir que quando uma função-$\lambda$ for criada, que ela suporte separadamente cada tipo em ``sub-funções” e a partir da entrada da função faça uma escolha a partir do tipo. Essa decisão evita que operações indevidas aconteçam com o código, operações não permitidas também resultam em erros antes que gerem resultados inválidos para a aplicação.
 
 \end{document}
